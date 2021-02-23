@@ -1,6 +1,6 @@
 const MongoClient=require('mongodb').MongoClient
 const assert=require('assert')
-const dboper = require('./operations')
+
 
 const url='mongodb://localhost:27017/'
 const dbname='mongodb'
@@ -17,6 +17,8 @@ MongoClient.connect(url,(err,client)=>{ //connects mongo client to mongo server
         assert.strictEqual(err,null)
         console.log("after insert:\n")
         console.log(result.ops)
+        // we are doing operation inside another to ensure 
+        // that previous is completed before proceeding to next one.
         collection.find({}).toArray(
             (err,docs)=>{ 
             //to find collection that matches in {} and output in docs

@@ -1,4 +1,5 @@
-// Linked to operations1.js using callbacks
+// Linked to operations1.js 
+// so that we can create user defined operation.Implemented using callbacks
 const MongoClient=require('mongodb').MongoClient
 const assert=require('assert')
 const dboper = require('./operations1')

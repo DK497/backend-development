@@ -5,7 +5,8 @@ exports.insertDocument = (db, document, collection, callback) => {
     const coll = db.collection(collection);// to get particular collection
     coll.insert(document, (err, result) => {
         assert.strictEqual(err, null);
-        console.log("Inserted " + result.result.n +
+        console.log("Inserted " + result.result.n + 
+                            // result.result.n is no. of documents inserted
             " documents into the collection " + collection);
             // result.result.n is no. of documents inserted 
         callback(result);
